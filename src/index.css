@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+}
+
 .roboto-thin {
   font-family: "Roboto", serif;
   font-weight: 100;
@@ -78,12 +82,12 @@
 
 body {
   font-family: roboto, sans-serif;
+  background-color: rgb(45, 44, 44);
 }
 
 .app {
   width: 100%;
   height: 100vh;
-  background-color: rgb(45, 44, 44);
 }
 
 .container {
@@ -100,6 +104,7 @@ body {
 .watched-list {
   display: flex;
   align-items: center;
+  height: 100%;
   margin: 1rem 0 0 0;
   flex: 1;
   flex-direction: column;
@@ -117,5 +122,18 @@ body {
     border: none;
     border-radius: 1rem;
     padding: 0.5rem;
+  }
+}
+
+.result {
+  display: flex;
+  height: 12rem;
+  gap: 1rem;
+  padding: 1rem;
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
   }
 }

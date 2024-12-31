@@ -1,8 +1,8 @@
 //=============== Import hooks ================
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
-//============== Import componets ============
+//============== Import components ============
 import NavBar from "./components/NavBar"
 import Results from './components/Results'
 import WatchedList from './components/WatchedList'
@@ -11,14 +11,20 @@ import WatchedList from './components/WatchedList'
 // ================ import movieData.js ================
 // anotherFile.js
 import { tempMovieData, tempWatchedData } from './data/movieData';
+import { MovieData } from './types/types';
+
+
 
 
 
 function App() {
-  const [searchData, setSearchData] = useState(null);
+  const [searchData, setSearchData] = useState<MovieData[]>(tempMovieData);
   const [searchInput, setSearchInput] = useState('');
 
-  console.log(searchInput);
+  useEffect(() => {
+    const filteredData = tempMovieData.filter(movie => movie.Title.toLowerCase().includes(searchInput.toLowerCase()));
+    setSearchData(filteredData);
+  }, [searchInput]);
 
   return (
     <div className="app">
@@ -30,8 +36,8 @@ function App() {
         </div>
       </NavBar>
       <div className="container">
-        <Results />
-        <WatchedList />
+        <Results searchData={searchData} />
+        <WatchedList tempWatchedData={tempWatchedData} />
       </div>
     </div>
   )
