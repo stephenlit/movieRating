@@ -1,19 +1,18 @@
 //================= import types ============
-import { WatchedMovieData } from '../types/types';
 
 type WatchedListProps = {
-    tempWatchedData: WatchedMovieData[];
+    children: React.ReactNode;
 };
 
-
-function WatchedList({ tempWatchedData }: WatchedListProps) {
-
-
-    console.log(tempWatchedData);
+function WatchedList({ children }: WatchedListProps) {
     return (
-        <div className="watched-list">
-            <h2>Watched List</h2>
-        </div>
+        <ul className='search-results'>
+            <li className='watched-heading'>
+                <p>Movies you watched</p>
+                <div>🔢movies ⭐8.8 🌠8.5 ⌛148 min</div>
+            </li>
+            {children}
+        </ul>
     );
 }
 

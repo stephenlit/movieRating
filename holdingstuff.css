@@ -1,0 +1,32 @@
+/* Style for the container of search results */
+.search-results {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if there are many results */
+    gap: 1rem; /* Space between items */
+    max-width: 15rem;
+}
+
+/* Style for individual result */
+.result {
+    display: flex;
+    text-align: center;
+    border: 1px solid #ddd; /* Optional: Add a border for styling */
+    padding: 8px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Style for the image */
+.result img {
+    width: 100%; /* Make the image fill the container width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image if needed */
+    border-radius: 4px; /* Optional: Rounded corners for images */
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    width: 100%;
+}
